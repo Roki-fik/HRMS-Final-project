@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Officer Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="finance.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home" onclick="showSection('home')"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#employees" onclick="showSection('employees')"><i class="fas fa-users"></i> Employees</a></li>
+                <li><a href="#salary" onclick="showSection('salary')"><i class="fas fa-calculator"></i> Salary</a></li>
+                <li><a href="#budget" onclick="showSection('budget')"><i class="fas fa-chart-pie"></i> Budget</a></li>
+                <li><a href="#reports" onclick="showSection('reports')"><i class="fas fa-file-alt"></i> Reports</a></li>
+                <li><a href="#announcements" onclick="showSection('announcements')"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+                <li><a href="#profile" onclick="showSection('profile')"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- Home Section -->
+        <section id="home" class="content-section active">
+            <h2>Finance Overview</h2>
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <h3>Total Employees</h3>
+                    <p>150</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Monthly Budget</h3>
+                    <p>$500,000</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Approvals</h3>
+                    <p>23</p>
+                </div>
+            </div>
+
+            <div class="calculator-section">
+                <h3>Quick Salary Calculator</h3>
+                <form class="calculator-form">
+                    <input type="text" placeholder="Employee ID">
+                    <input type="number" placeholder="Base Salary">
+                    <input type="number" placeholder="Bonuses">
+                    <input type="number" placeholder="Deductions">
+                    <button class="btn btn-primary">Calculate Net Salary</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Employees Section -->
+        <section id="employees" class="content-section">
+            <h2>Employee Management</h2>
+            <table class="employee-table">
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Fikrik Adugna</td>
+                        <td>Finance</td>
+                        <td>$5,000</td>
+                        <td>
+                            <button class="btn btn-primary">Calculate Salary</button>
+                            <button class="btn btn-warning">Add Bonus</button>
+                        </td>
+                    </tr>
+                    <!-- More rows -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Salary Section -->
+        <section id="salary" class="content-section">
+            <h2>Salary Management</h2>
+            <div class="budget-overview">
+                <div>
+                    <h3>Salary Distribution</h3>
+                    <!-- Add chart here -->
+                </div>
+                <div>
+                    <h3>Salary Adjustments</h3>
+                    <form>
+                        <input type="text" placeholder="Employee ID">
+                        <input type="number" placeholder="New Salary">
+                        <button class="btn btn-primary">Update Salary</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget Section -->
+        <section id="budget" class="content-section">
+            <h2>Budget Management</h2>
+            <div class="budget-overview">
+                <div>
+                    <h3>Current Budget Allocation</h3>
+                    <!-- Add budget chart -->
+                </div>
+                <div>
+                    <h3>Budget Adjustments</h3>
+                    <form>
+                        <input type="number" placeholder="New Budget Amount">
+                        <textarea placeholder="Budget Notes"></textarea>
+                        <button class="btn btn-primary">Update Budget</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports" class="content-section">
+            <h2>Salary Reports</h2>
+            <div class="report-list">
+                <div class="report-item">
+                    <h4>Report from Fikrik Adugna</h4>
+                    <p>Issue: Incorrect tax deduction</p>
+                    <button class="btn btn-primary">Resolve Issue</button>
+                </div>
+                <!-- More reports -->
+            </div>
+        </section>
+
+        <!-- Announcements Section -->
+        <section id="announcements" class="content-section">
+            <h2>COE Announcements</h2>
+            <div class="announcement-card">
+                <h3>New Tax Regulations</h3>
+                <p>Effective from January 2024...</p>
+            </div>
+            <!-- More announcements -->
+        </section>
+    </main>
+
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Finance Department</h4>
+                <p>Ensuring financial excellence and accountability</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">HR Policies</a></li>
+                    <li><a href="#">Tax Guidelines</a></li>
+                    <li><a href="#">Financial Calendar</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: fikrikadugna@gmail.com</p>
+                <p>Phone: +251-924974691</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Financial Management System | Designed by Fikrik Adugna</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function logout() {
+            // Add logout functionality
+            window.location.href = '/login';
+        }
+        function showSection(sectionId) {
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+
+    // Show footer only on the home section
+    const footer = document.querySelector('.dashboard-footer');
+    if (sectionId === 'home') {
+        footer.style.display = 'block';
+    } else {
+        footer.style.display = 'none';
+    }
+}
+function logout() {
+    window.location.href = 'index.html';
+}
+    </script>
+</body>
+</html>

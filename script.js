@@ -134,3 +134,24 @@ function showLoginForm() {
         });
     }
 }
+function showLoginForm() {
+    const role = document.getElementById('role').value;
+    const forms = document.querySelectorAll('.login-form');
+    forms.forEach(form => form.style.display = 'none');
+    if (role) {
+        const loginForm = document.getElementById(`${role}-login`);
+        loginForm.style.display = 'block';
+
+        // Add event listener to the form's submit button
+        const submitButton = loginForm.querySelector('button[type="submit"]');
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            if (role === 'employee') {
+                window.location.href = 'employe.html';
+            } else if (role === 'director') {
+                window.location.href = 'director.html';
+            }
+            // Add additional redirection logic for other roles if needed
+        });
+    }
+}

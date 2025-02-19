@@ -315,3 +315,46 @@ nav li {
     text-align: center;
     font-size: 0.7em; /* Smaller font size */
 }
+/* Report Section Styles */
+#report-upload-form {
+    margin-bottom: 20px;
+}
+
+#report-file {
+    margin-bottom: 10px;
+}
+
+.attendance-report {
+    margin-bottom: 10px;
+}
+
+.attendance-report label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Style the checkbox to look like a small rectangle */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Style the upload and submit buttons consistently */
+#report button,
+#report button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#report button:hover,
+#report button:hover {
+    background-color: #0056b3;
+}
