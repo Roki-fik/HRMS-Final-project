@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRMS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to HRMS</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showHome()">Home</a></li>
+                <li><a href="#about" onclick="showAbout()">About</a></li>
+                <li><a href="#contact" onclick="showContact()">Contact</a></li>
+                <li><a href="#vacancy" onclick="showVacancy()">Vacancy</a></li>
+                <li><a href="#login-container" onclick="showLogin()">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="slideshow-container">
+        <div class="slides active">
+            <img src="image/image1.png" alt="Image 1">
+            <div class="text">MTU Human Resource Management System</div>
+            <div class="overlay">
+                <button class="apply-button">Apply for a Job</button>
+            </div>
+        </div>
+        <div class="slides">
+            <img src="image/image2.jfif" alt="Image 2">
+            <div class="text">Caption Text 2</div>
+            <div class="overlay">
+                <button class="apply-button">Apply for a Job</button>
+            </div>
+        </div>
+        <div class="slides">
+            <img src="image/image3.webp" alt="Image 3">
+            <div class="text">Caption Text 3</div>
+            <div class="overlay">
+                <button class="apply-button">Apply for a Job</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="employee-section">
+        <div class="employee-container">
+            <img src="image/simegnew.jpg" alt="Employee Image">
+            <h2>Employee</h2>
+            <button class="read-more" onclick="toggleReadMore('employee')">Read More</button>
+            <div class="more-text employee">
+                <p>
+                    Our team consists of professionals from diverse backgrounds, bringing a wealth of knowledge and experience to the table. We believe in continuous learning and development, and provide ample opportunities for our employees to grow and advance in their careers. Together, we work towards achieving our mission and making a positive impact in the community.
+                </p>
+            </div>
+        </div>
+        <div class="employee-container">
+            <img src="image/director.jpg" alt="Director Image">
+            <h2>Director</h2>
+            <button class="read-more" onclick="toggleReadMore('director')">Read More</button>
+            <div class="more-text director">
+                <p>
+                    Our director leads with vision and integrity, ensuring that our organization stays true to its mission and values. With years of experience and a deep understanding of the industry, our director guides our team towards success and growth.
+                </p>
+            </div>
+        </div>
+        <div class="employee-container">
+            <img src="image/finance.jpg" alt="Finance Officer Image">
+            <h2>Finance Officer</h2>
+            <button class="read-more" onclick="toggleReadMore('finance')">Read More</button>
+            <div class="more-text finance">
+                <p>
+                    Our finance officer is responsible for managing the financial health of our organization. With expertise in budgeting, financial planning, and analysis, our finance officer ensures that we make sound financial decisions and maintain fiscal responsibility.
+                </p>
+            </div>
+        </div>
+        <div class="employee-container">
+            <img src="image/dr-waqo2.jpg" alt="CEO Image">
+            <h2>CEO of HRM</h2>
+            <button class="read-more" onclick="toggleReadMore('ceo')">Read More</button>
+            <div class="more-text ceo">
+                <p>
+                    Our CEO of HRM is a visionary leader who drives our organization's strategic direction. With a focus on innovation and excellence, our CEO ensures that we remain at the forefront of the industry and continue to deliver exceptional value to our clients and stakeholders.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-container" style="display: none;">
+        <h2>About Our Service</h2>
+        <p>
+            We facilitate performance management, learning and development, and ensure compliance with labor laws. Key services include self-service portals, applicant tracking, and robust reporting. Universities benefit from increased efficiency, data accuracy, and improved employee experience. The HRMS manages faculty-specific needs like tenure tracking and student worker management, while also handling grant funding allocations and union agreement compliance. Ultimately, it enables data-driven decision-making for strategic workforce planning.
+        </p>
+    </div>
+
+    <div class="vacancy-container" style="display: none;">
+        <h2>Job Vacancies</h2>
+        <div class="job-posting">
+            <h3>Software Developer</h3>
+            <button class="read-more" onclick="toggleJobDescription('job1')">Read More</button>
+            <div class="job-description job1" style="display: none;">
+                <p>
+                    We are looking for a skilled Software Developer to join our team. The ideal candidate will have experience with JavaScript, HTML, CSS, and backend technologies. Responsibilities include developing and maintaining web applications, collaborating with cross-functional teams, and ensuring the performance and scalability of our systems.
+                </p>
+                <button class="apply-button">Apply</button>
+            </div>
+        </div>
+        <div class="job-posting">
+            <h3>Project Manager</h3>
+            <button class="read-more" onclick="toggleJobDescription('job2')">Read More</button>
+            <div class="job-description job2" style="display: none;">
+                <p>
+                    We are seeking an experienced Project Manager to oversee our projects from inception to completion. The successful candidate will have a proven track record in project management, excellent communication skills, and the ability to lead and motivate teams. Responsibilities include planning, executing, and closing projects, managing resources, and ensuring project goals are met.
+                </p>
+                <button class="apply-button">Apply</button>
+            </div>
+        </div>
+        <div class="job-posting">
+            <h3>HR Specialist</h3>
+            <button class="read-more" onclick="toggleJobDescription('job3')">Read More</button>
+            <div class="job-description job3" style="display: none;">
+                <p>
+                    We are looking for an HR Specialist to join our team. The ideal candidate will have experience in recruitment, employee relations, and HR compliance. Responsibilities include managing the recruitment process, conducting interviews, and ensuring compliance with labor laws and company policies.
+                </p>
+                <button class="apply-button">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-container" style="display: none;">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="recent-work-container">
+        <div class="recent-work-item">
+            <img src="image/news.jpg" alt="News Image">
+            <h3>News</h3>
+            <button class="read-more">Read More</button>
+            <div class="description" style="display: none;">
+                <p>የመውጫ ፈተና ውጤት መለቀቅን ተከትሎ በርካታ የኮምፕርሄንሲቭ ነርሲንግ ተፈታኞች ቅሬታቸውን ለቲክቫህ ዩኒቨርሲቲ ልከዋል፡፡
+
+                    "ፈተናው ከብሉ ፕሪንት ውጪ ነው የመጣው" የሚሉት ተፈታኞቹ፤ እርማቱ በድጋሜ ሊታይ ይገባል ሲሉ ይጠይቃሉ፡፡ 
+                    
+                    በጉዳዩ ላይ ትምህርት ሚኒስቴርን ያነጋገርን ሲሆን፤ ከኮምፕርሄንሲቭ ነርሲንግ ፈተና ጋር የተያያዘ ምንም አይነት ቅሬታ ለተቋሙ #አለመድረሱን ሚኒስቴሩ ጠቁሟል፡፡ 
+                    
+                    በውጤታቸው ላይ ቅሬታ ያላቸው ተፈታኞች በትምህርት ሚኒስቴር ውስጥ ለሚገኘው የቅሬታ ሰሚ ኮሚቴ ማቅረብ እንደሚችሉም ተቋሙ ገልጿል፡፡
+                    
+                    በሌላ በኩል ውጤታቸውን ለማየት የተቸገሩ የግል (በድጋሜ) ተፈታኞች፣ ውጤታቸው ወደተፈተኑበት ተቋም የተላከ በመሆኑ ወደተቋማቱ በመሔድ ውጤታቸውን ማየት እንደሚችሉ ሚኒስቴሩ አስረድቷል፡፡</p>
+            </div>
+            <div class="navigation-buttons">
+                <button class="prev" onclick="showPreviousNews()">Previous</button>
+                <button class="next" onclick="showNextNews()">Next</button>
+            </div>
+        </div>
+        <div class="recent-work-item">
+            <img src="image/projects1.jpg" alt="Previous Projects Image">
+            <h3>Previous Projects</h3>
+            <button class="read-more">Read More</button>
+            <div class="description" style="display: none;">
+                <p>Finished projects.</p>
+            </div>
+            <div class="navigation-buttons">
+                <button class="prev" onclick="showPreviousProject()">Previous</button>
+                <button class="next" onclick="showNextProject()">Next</button>
+            </div>
+        </div>
+        <div class="recent-work-item">
+            <img src="image/projects.jpg" alt="Ongoing Projects Image">
+            <h3>Ongoing and Finished Projects</h3>
+            <button class="read-more">Read More</button>
+            <div class="description" style="display: none;">
+                <p>Different projects done by employees with photos and descriptions.</p>
+            </div>
+            <div class="navigation-buttons">
+                <button class="prev" onclick="showPreviousOngoingProject()">Previous</button>
+                <button class="next" onclick="showNextOngoingProject()">Next</button>
+            </div>
+        </div>
+        <div class="recent-work-item">
+            <img src="image/projects2.jpg" alt="Rewarded Employees Image">
+            <h3>Rewarded Employees</h3>
+            <button class="read-more">Read More</button>
+            <div class="description" style="display: none;">
+                <p>About what they achieved with their images.</p>
+            </div>
+            <div class="navigation-buttons">
+                <button class="prev" onclick="showPreviousRewardedEmployee()">Previous</button>
+                <button class="next" onclick="showNextRewardedEmployee()">Next</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="login-container" style="display: none;">
+            <h2>Login</h2>
+            <label for="role">Select Your Role:</label>
+            <select id="role" onchange="showLoginForm()">
+                <option value="">--Select Role--</option>
+                <option value="employee">Employee</option>
+                <option value="director">Director</option>
+                <option value="admin">Admin</option>
+                <option value="finance">Finance Officer</option>
+            </select>
+    
+            <div id="employee-login" class="login-form" style="display: none;">
+                <h3>Employee Login</h3>
+                <form action="employe.html" method="post">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+    
+            <div id="director-login" class="login-form" style="display: none;">
+                <h3>Director Login</h3>
+                <form>
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+    
+            <div id="admin-login" class="login-form" style="display: none;">
+                <h3>Admin Login</h3>
+                <form>
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+    
+            <div id="finance-login" class="login-form" style="display: none;">
+                <h3>Finance Officer Login</h3>
+                <form>
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showLoginForm() {
+            const role = document.getElementById('role').value;
+            const forms = document.querySelectorAll('.login-form');
+            forms.forEach(form => form.style.display = 'none');
+            if (role) {
+                document.getElementById(`${role}-login`).style.display = 'block';
+            }
+        }
+    
+        function showLogin() {
+            document.getElementById('login-container').style.display = 'block';
+        }
+    </script>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home" onclick="showHome()">Home</a></li>
+                    <li><a href="#about" onclick="showAbout()">About</a></li>
+                    <li><a href="#contact" onclick="showContact()">Contact</a></li>
+                    <li><a href="#vacancy" onclick="showVacancy()">Vacancy</a></li>
+                    <li><a href="#login-container" onclick="showLogin()">Login</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+123 456 7890</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@hrms.com</p>
+                </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" class="social-circle">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-circle">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-circle">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2025 HRMS. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
