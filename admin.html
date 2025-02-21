@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin || Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#writeMessage" onclick="showSection('writeMessage')"><i class="fas fa-envelope"></i> Write Message</a></li>
+            <li><a href="#manageDirector" onclick="showSection('manageDirector')"><i class="fas fa-user-tie"></i> Manage Director</a></li>
+            <li><a href="#manageFinanceOfficer" onclick="showSection('manageFinanceOfficer')"><i class="fas fa-user-shield"></i> Manage Finance Officer</a></li>
+            <li><a href="#report" onclick="showSection('report')"><i class="fas fa-file-alt"></i> Report</a></li>
+        </ul>
+    </nav>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#Dashboard" onclick="showSection('Dashboard')"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="#profile" onclick="showSection('profile')"><i class="fas fa-user"></i> Profile</a></li>
+            <li>
+                <a href="#manageAccount" onclick="showSection('manageAccount')"><i class="fas fa-cogs"></i> Manage Account</a>
+                <ul>
+                    <li><a href="#createAccount" onclick="showSection('createAccount')"><i class="fas fa-user-plus"></i> Create Account</a></li>
+                    <li><a href="#deleteAccount" onclick="showSection('deleteAccount')"><i class="fas fa-user-minus"></i> Delete Account</a></li>
+                    <li><a href="#updateAccount" onclick="showSection('updateAccount')"><i class="fas fa-user-edit"></i> Update Account</a></li>
+                    <li><a href="#searchAccount" onclick="showSection('searchAccount')"><i class="fas fa-search"></i> Search Account</a></li>
+                </ul>
+            </li>
+            <li><a href="employeePlacemnt.html" onclick="showSection('employeePlacement')"><i class="fas fa-briefcase"></i> Employee Placement</a></li>
+            <li><a href="#approveWithdrawal" onclick="showSection('approveWithdrawal')"><i class="fas fa-check-circle"></i> Approve Withdrawal</a></li>
+            <li><a href="#employeeFileRecord" onclick="showSection('employeeFileRecord')"><i class="fas fa-folder-open"></i> Employee File Record</a></li>
+            <li><a href="#applicantRegistration" onclick="showSection('applicantRegistration')"><i class="fas fa-user-check"></i> Applicant Registration</a></li>
+            <li><a href="#announceVacancy" onclick="showSection('announceVacancy')"><i class="fas fa-bullhorn"></i> Announce Vacancy</a></li>
+            <li><a href="#recruitment" onclick="showSection('recruitment')"><i class="fas fa-users"></i> Recruitment</a></li>
+            <li><a href="#logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <!-- Content sections go here -->
+    </div>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function logout() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
