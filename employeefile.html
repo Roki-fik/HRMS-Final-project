@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee File Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .file-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-4">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="admin.html"><i class="fas fa-arrow-left me-2"></i>Back to Dashboard</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#viewFiles"><i class="fas fa-folder-open me-2"></i>View Files</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#manageFiles"><i class="fas fa-cogs me-2"></i>Manage Files</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#addFile"><i class="fas fa-file-upload me-2"></i>Add New File</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- View Files Section -->
+        <div id="viewFiles" class="mb-4">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4><i class="fas fa-folder-open me-2"></i>View Employee Files</h4>
+                </div>
+                <div class="card-body">
+                    <form id="searchForm" class="mb-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="employeeId" placeholder="Enter Employee ID" required>
+                            <button class="btn btn-primary" type="submit"><i class="fas fa-search me-2"></i> Search employee</button>
+                        </div>
+                    </form>
+                    <div class="file-list">
+                        <ul class="list-group" id="fileList">
+                            <!-- Files will be displayed here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add New File Section -->
+        <div id="addFile" class="mb-4">
+            <div class="card shadow">
+                <div>
+                    <!-- Add New search -->
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="employeeId" placeholder="Enter Employee ID" required>
+                        <button class="btn btn-primary" type="submit"><i class="fas fa-search me-2"></i>Search employee</button>
+                     
+                </div>
+                <div class="card-header bg-warning text-white">
+                    <h4><i class="fas fa-file-upload me-2"></i>Add New Employee File</h4>
+                </div>
+                <div class="card-body">
+                    <form id="addFileForm">
+                        <div class="mb-3">
+                            <label for="newFile" class="form-label">Upload File</label>
+                            <input type="file" class="form-control" id="newFile" accept=".doc,.docx,.pdf,.xls,.xlsx,.jpg,.jpeg,.png" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fileDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="fileDescription" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning"><i class="fas fa-paper-plane me-2"></i>Submit File</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Files Section -->
+        <div id="manageFiles" class="mb-4">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h4><i class="fas fa-cogs me-2"></i>Manage Employee Files</h4>
+                </div>
+                <div class="card-body file-list">
+                    <ul class="list-group">
+                        <!-- Sample File Item -->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Employee Contract.pdf
+                            <div>
+                                <a href="#" class="btn btn-sm btn-outline-primary me-2"><i class="fas fa-edit"></i> Edit</a>
+                                <button class="btn btn-sm btn-outline-danger" onclick="deleteFile('Employee Contract.pdf')"><i class="fas fa-trash"></i> Delete</button>
+                            </div>
+                        </li>
+                        <!-- Add more file items here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function deleteFile(fileName) {
+            if (confirm(`Are you sure you want to delete ${fileName}?`)) {
+                // Add logic to delete the file from the database
+                alert(`${fileName} has been deleted.`);
+            }
+        }
+
+        document.getElementById('addFileForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add logic to handle file upload and save to the database
+            alert('New file has been added.');
+        });
+
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const employeeId = document.getElementById('employeeId').value;
+            // Add logic to search for employee files by ID
+            alert(`Searching for files of employee ID: ${employeeId}`);
+            // Example of displaying files (replace with actual search results)
+            const fileList = document.getElementById('fileList');
+            fileList.innerHTML = `
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Employee Contract.pdf
+                    <a href="#" class="btn btn-sm btn-outline-primary"><i class="fas fa-eye"></i> View</a>
+                </li>
+            `;
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

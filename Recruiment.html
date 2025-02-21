@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-4">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="admin.html"><i class="fas fa-arrow-left me-2"></i>Back to Dashboard</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#candidateApplications"><i class="fas fa-users me-2"></i>Candidate Applications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#examSchedules"><i class="fas fa-calendar-alt me-2"></i>Exam Schedules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#interviewSchedules"><i class="fas fa-calendar-alt me-2"></i>Interview Schedules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#hiringDecisions"><i class="fas fa-check-circle me-2"></i>Hiring Decisions</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Candidate Applications Section -->
+        <div id="candidateApplications" class="mb-4">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h4><i class="fas fa-users me-2"></i>Candidate Applications</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <!-- Sample Candidate Application -->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            John Doe - Software Engineer
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#viewCandidatesModal"><i class="fas fa-eye"></i> View</button>
+                        </li>
+                        <!-- Add more candidate applications here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exam Schedules Section -->
+        <div id="examSchedules" class="mb-4">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <h4><i class="fas fa-calendar-alt me-2"></i>Exam Schedules</h4>
+                    <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#postExamModal"><i class="fas fa-plus me-2"></i>Post Exam Schedule</button>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <!-- Sample Exam Schedule -->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            John Doe - Software Engineer
+                            <span>2025-03-10 09:00 AM</span>
+                        </li>
+                        <!-- Add more exam schedules here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interview Schedules Section -->
+        <div id="interviewSchedules" class="mb-4">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <h4><i class="fas fa-calendar-alt me-2"></i>Interview Schedules</h4>
+                    <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#postInterviewModal"><i class="fas fa-plus me-2"></i>Post Interview Schedule</button>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <!-- Sample Interview Schedule -->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            John Doe - Software Engineer
+                            <span>2025-03-15 10:00 AM</span>
+                        </li>
+                        <!-- Add more interview schedules here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hiring Decisions Section -->
+        <div id="hiringDecisions" class="mb-4">
+            <div class="card shadow">
+                <div class="card-header bg-warning text-white">
+                    <h4><i class="fas fa-check-circle me-2"></i>Hiring Decisions</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <!-- Sample Hiring Decision -->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            John Doe - Software Engineer
+                            <span class="badge bg-success">Hired</span>
+                        </li>
+                        <!-- Add more hiring decisions here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Exam Modal -->
+    <div class="modal fade" id="postExamModal" tabindex="-1" aria-labelledby="postExamModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="postExamModalLabel">Post Exam Schedule</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="postExamForm">
+                        <div class="mb-3">
+                            <label for="examTitle" class="form-label">Exam Title</label>
+                            <input type="text" class="form-control" id="examTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="examDate" class="form-label">Exam Date</label>
+                            <input type="date" class="form-control" id="examDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="examTime" class="form-label">Exam Time</label>
+                            <input type="time" class="form-control" id="examTime" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="examPlace" class="form-label">Exam Place</label>
+                            <input type="text" class="form-control" id="examPlace" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>Post Exam</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Interview Modal -->
+    <div class="modal fade" id="postInterviewModal" tabindex="-1" aria-labelledby="postInterviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="postInterviewModalLabel">Post Interview Schedule</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="postInterviewForm">
+                        <div class="mb-3">
+                            <label for="interviewTitle" class="form-label">Interview Title</label>
+                            <input type="text" class="form-control" id="interviewTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="interviewDate" class="form-label">Interview Date</label>
+                            <input type="date" class="form-control" id="interviewDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="interviewTime" class="form-label">Interview Time</label>
+                            <input type="time" class="form-control" id="interviewTime" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="interviewPlace" class="form-label">Interview Place</label>
+                            <input type="text" class="form-control" id="interviewPlace" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>Post Interview</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Candidates Modal -->
+    <div class="modal fade" id="viewCandidatesModal" tabindex="-1" aria-labelledby="viewCandidatesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewCandidatesModalLabel">Candidate List</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <!-- Sample Candidate -->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            John Doe
+                            <span>Software Engineer</span>
+                        </li>
+                        <!-- Add more candidates here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('postJobForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add logic to handle job posting
+            alert('Job has been posted.');
+            // Close the modal after posting the job
+            const postJobModal = new bootstrap.Modal(document.getElementById('postJobModal'));
+            postJobModal.hide();
+        });
+
+        document.getElementById('postExamForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add logic to handle exam posting
+            alert('Exam schedule has been posted.');
+            // Close the modal after posting the exam schedule
+            const postExamModal = new bootstrap.Modal(document.getElementById('postExamModal'));
+            postExamModal.hide();
+        });
+
+        document.getElementById('postInterviewForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add logic to handle interview posting
+            alert('Interview schedule has been posted.');
+            // Close the modal after posting the interview schedule
+            const postInterviewModal = new bootstrap.Modal(document.getElementById('postInterviewModal'));
+            postInterviewModal.hide();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
