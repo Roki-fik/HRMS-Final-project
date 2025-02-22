@@ -92,16 +92,188 @@
                             <div class="col">
                                 <div class="card placement-card h-100">
                                     <div class="card-body">
-                                        <h5><i class="fas fa-rocket text-primary me-2"></i>Initial Placement</h5>
-                                        <p class="text-muted">New hires to entry-level roles</p>
+                                        <div class="card-body">
+                                            <h5><i class="fas fa-rocket text-primary me-2"></i>Initial Placement</h5>
+                                            <p class="text-muted">New hires to entry-level roles</p>
+                                            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#placementModal"><i class="fas fa-user-plus me-2"></i>Employee Placement</button>
+                                        </div>
+                                        
+                                        <!-- Employee Placement Modal -->
+                                        <div class="modal fade" id="placementModal" tabindex="-1" aria-labelledby="placementModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="placementModalLabel"><i class="fas fa-user-plus me-2"></i>Employee Placement</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form id="placementForm">
+                                                            <div class="mb-3">
+                                                                <label for="firstName" class="form-label">First Name</label>
+                                                                <input type="text" class="form-control" id="firstName" required>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="middleName" class="form-label">Middle Name</label>
+                                                                <input type="text" class="form-control" id="middleName" required>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="lastName" class="form-label">Last Name</label>
+                                                                <input type="text" class="form-control" id="lastName" required>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="sex" class="form-label">Sex</label>
+                                                                <select class="form-select" id="sex" required>
+                                                                    <option value="">Select Sex</option>
+                                                                    <option value="male">Male</option>
+                                                                    <option value="female">Female</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="address" class="form-label">Address</label>
+                                                                <input type="text" class="form-control mb-2" id="region" placeholder="Region" required>
+                                                                <input type="text" class="form-control mb-2" id="zone" placeholder="Zone" required>
+                                                                <input type="text" class="form-control" id="kebele" placeholder="Kebele" required>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="phone" class="form-label">Phone No (use country code)</label>
+                                                                <input type="text" class="form-control" id="phone" required>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="jobInfo" class="form-label">Job Information</label>
+                                                                <input type="text" class="form-control mb-2" id="faculty" placeholder="Faculty" required>
+                                                                <input type="text" class="form-control mb-2" id="department" placeholder="Department" required>
+                                                                <input type="text" class="form-control mb-2" id="payRate" placeholder="Pay Rate" required>
+                                                                <input type="text" class="form-control mb-2" id="medicalBenefits" placeholder="Medical Benefits" required>
+                                                                <input type="date" class="form-control" id="startDate" placeholder="Start Date" required>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="expectedDuration" class="form-label">Expected Duration</label>
+                                                                <select class="form-select" id="expectedDuration" required>
+                                                                    <option value="">Select Duration</option>
+                                                                    <option value="fullTime">Full Time</option>
+                                                                    <option value="hours">Hours</option>
+                                                                    <option value="week">Week</option>
+                                                                </select>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>Submit</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Scripts -->
+                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                                        <script>
+                                            document.getElementById('placementForm').addEventListener('submit', function(event) {
+                                                event.preventDefault();
+                                                // Add logic to handle form submission
+                                                alert('Placement form has been submitted.');
+                                            });
+                                        </script>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card placement-card h-100">
                                     <div class="card-body">
-                                        <h5><i class="fas fa-arrow-up text-success me-2"></i>Promotion</h5>
-                                        <p class="text-muted">Advancement to higher roles</p>
+                                      <!-- Add the Employee Promotion button -->
+<div class="col">
+    <div class="card placement-card h-100">
+        <div class="card-body">
+            <h5><i class="fas fa-arrow-up text-success me-2"></i>Promotion</h5>
+            <p class="text-muted">Advancement to higher roles</p>
+            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#promotionModal"><i class="fas fa-arrow-up me-2"></i>Employee Promotion</button>
+        </div>
+    </div>
+</div>
+
+<!-- Employee Promotion Modal -->
+<div class="modal fade" id="promotionModal" tabindex="-1" aria-labelledby="promotionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="promotionModalLabel"><i class="fas fa-arrow-up me-2"></i>Employee Promotion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="promotionForm">
+                    <div class="mb-3">
+                        <label for="employeeId" class="form-label">Employee ID</label>
+                        <input type="text" class="form-control" id="employeeId" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="middleName" class="form-label">Middle Name</label>
+                        <input type="text" class="form-control" id="middleName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sex" class="form-label">Sex</label>
+                        <select class="form-select" id="sex" required>
+                            <option value="">Select Sex</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="startDate" class="form-label">Start Date of New Duties</label>
+                        <input type="date" class="form-control" id="startDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="endDate" class="form-label">End Date (Temporary Promotion Only)</label>
+                        <input type="date" class="form-control" id="endDate">
+                    </div>
+                    <div class="mb-3">
+                        <label for="currentJobTitle" class="form-label">Current Job Title</label>
+                        <input type="text" class="form-control" id="currentJobTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newJobTitle" class="form-label">New Job Title</label>
+                        <input type="text" class="form-control" id="newJobTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="department" class="form-label">School/College/Division Department</label>
+                        <input type="text" class="form-control" id="department" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newSupervisorName" class="form-label">New Supervisor Name and Title</label>
+                        <input type="text" class="form-control" id="newSupervisorName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="supervisorPhone" class="form-label">Supervisor Phone</label>
+                        <input type="text" class="form-control" id="supervisorPhone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="currentSalary" class="form-label">Current Salary</label>
+                        <input type="number" class="form-control" id="currentSalary" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newSalary" class="form-label">New Salary</label>
+                        <input type="number" class="form-control" id="newSalary" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('promotionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Add logic to handle form submission
+        alert('Promotion form has been submitted.');
+    });
+</script>
                                     </div>
                                 </div>
                             </div>
@@ -262,6 +434,7 @@
             </div>
         </div>
     </div>
+   
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
